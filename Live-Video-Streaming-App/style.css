@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.video-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+}
+
+.action-container {
+  position: absolute;
+  color: white;
+
+  height: 13rem;
+  width: 5rem;
+
+  top: 20rem;
+  right: 5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  z-index: 2;
+  cursor: pointer;
+}
+
+.action-container > * {
+  /* background-color: coral; */
+  width: 100%;
+  height: 5rem;
+
+  border-radius: 50%;
+  border: 5px solid white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.record-btn {
+  background-color: red;
+
+  height: 3rem;
+  width: 3rem;
+
+  border-radius: 50%;
+}
+
+.capture-btn {
+  background-color: white;
+
+  height: 3rem;
+  width: 3rem;
+
+  border-radius: 50%;
+}
+
+.record-anm {
+  animation-name: record-anm;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-direction: alternate;
+}
+
+.capture-anm {
+  animation-name: record-anm;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+}
+
+@keyframes record-anm {
+  from {
+    transform: scale(0.9);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes capture-anm {
+  from {
+    transform: scale(0.9);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.timer-container {
+  font-size: 2rem;
+  color: white;
+  display: inline-block;
+
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+
+  padding: 10px;
+
+  z-index: 2;
+}
+
+/* ===== Start Filter CSS ======= */
+
+.filter-container {
+  position: absolute;
+  top: calc((100vh - 16rem) / 2);
+  left: 3rem;
+  background-color: blue;
+  height: 16rem;
+  width: 4rem;
+
+  z-index: 2;
+  cursor: pointer;
+}
+
+.filter {
+  height: 4rem;
+  background-image: url("https://cdn.pixabay.com/photo/2022/01/17/22/20/subtract-6945896_1280.png");
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-blend-mode: color-burn;
+}
+
+.red {
+  background-color: #d211116e;
+}
+
+.blue {
+  background-color: #1120d27d;
+}
+
+.green {
+  background-color: #11d27b91;
+}
+
+.yellow {
+  background-color: #efd205a8;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.filter-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #efd205a8;
+  z-index: 1;
+}
+
+/* ===== End Filter CSS ======= */
